@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:background="@drawable/bg2"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/payment_payslip"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Payment"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/Employee_payslip"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Employee"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Button
+        android:id="@+id/attendance_payslip"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Attendance"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <Button
+        android:id="@+id/report"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Report"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="467dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
