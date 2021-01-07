@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#1b1b1b"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:hint="Name"
+        android:padding="10dp"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/black"
+        android:background="@color/white" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_mobile"
+        android:hint="Mobile Number"
+        android:padding="10dp"
+        android:textColorHint="@color/black"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_mail"
+        android:hint="Email"
+        android:padding="10dp"
+        android:textColorHint="@color/black"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_address"
+        android:hint="Address"
+        android:textColorHint="@color/black"
+
+        android:padding="10dp"
+        android:inputType="textPostalAddress"
+        android:maxLength="10"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_job"
+        android:textColorHint="@color/black"
+        android:hint="Job Profile"
+        android:padding="10dp"
+        android:maxLength="10"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_gender"
+        android:hint="Gender"
+        android:padding="10dp"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:maxLength="10"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_join_date"
+        android:hint="Date Of Joining"
+        android:textColorHint="@color/black"
+        android:padding="10dp"
+        android:inputType="date"
+
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_employee"
+        android:text="Add Employee"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"  />
+
+</LinearLayout>

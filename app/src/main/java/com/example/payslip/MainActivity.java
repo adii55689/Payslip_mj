@@ -2,6 +2,7 @@ package com.example.payslip;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,38 +17,47 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_page);
 
 
-        final Button add_E = findViewById(R.id.add_employee);
-        add_E.setOnClickListener((new View.OnClickListener() {
+        Button employeePageButton = findViewById(R.id.Employee_add);
+        employeePageButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "Add_Employee Button Clicked", Toast.LENGTH_LONG).show();
+                Intent myIntent = new Intent(MainActivity.this, EmployeeActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        }));
+
+        Button paymentButton = findViewById(R.id.payment_payslip);
+        paymentButton.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, PayslipActivity.class);
+                MainActivity.this.startActivity(myIntent);
             }
         }));
 
 
-        final Button pay = findViewById(R.id.pay_final);
-        add_E.setOnClickListener((new View.OnClickListener() {
+        /*final Button pay = findViewById(R.id.pay_final);
+        pay.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),
                         "Pay Now Button is clicked", Toast.LENGTH_LONG).show();
             }
-        }));
+        }));*/
 
 
 
-        etname = findViewById(R.id.et_name);
-        etmobile= findViewById(R.id.et_mobile);
-        etemail = findViewById(R.id.et_mail);
-        etaddress= findViewById(R.id.et_address);
-        etjob =findViewById(R.id.et_job);
-        etgender=findViewById(R.id.et_gender);
-        etjoining=findViewById(R.id.et_join_date);
-        btaddEmployee=findViewById(R.id.add_employee);
+//        etname = findViewById(R.id.et_name);
+//        etmobile= findViewById(R.id.et_mobile);
+//        etemail = findViewById(R.id.et_mail);
+//        etaddress= findViewById(R.id.et_address);
+//        etjob =findViewById(R.id.et_job);
+//        etgender=findViewById(R.id.et_gender);
+//        etjoining=findViewById(R.id.et_join_date);
+//        btaddEmployee=findViewById(R.id.add_employee);
 
 
 
