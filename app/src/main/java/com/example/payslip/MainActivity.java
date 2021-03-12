@@ -1,17 +1,30 @@
 package com.example.payslip;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+
 public class MainActivity extends AppCompatActivity {
     EditText etname,etmobile,etemail,etaddress,etjob,etgender,etjoining;
     Button btaddEmployee;
+
+    private int REQUEST_PDF  = 21;
+    private String encoded_pdf;
 
 
     @Override
@@ -35,6 +48,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(MainActivity.this, PayslipActivity.class);
                 MainActivity.this.startActivity(myIntent);
+            }
+        }));
+
+        Button uploadCsvButton = findViewById(R.id.uploadCsv);
+        uploadCsvButton.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+                chooseFile.addCategory(Intent.CATEGORY_OPENABLE);
+                chooseFile.setType("text/*");
+                chooseFile = Intent.createChooser(chooseFile, "Choose CSV file.");
+                startActivityForResult(chooseFile,REQUEST_PDF);
             }
         }));
 
@@ -62,5 +87,54 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode!=REQUEST_PDF || data == null || resultCode != RESULT_OK ) return;
+        Log.d("dbg", "onActivityResult: "+ requestCode + data + resultCode);
+        Uri path = data.getData();
+
+        Log.d("dbg", "onActivityResult: "+ path);
+
+        try {
+            InputStream inputStream = MainActivity.this.getContentResolver().openInputStream(path);
+
+            BufferedReader bufferedReader = new BufferedReader(
+                    new InputStreamReader(inputStream, Charset.forName("UTF-8"))
+            );
+
+            String line = "";
+            int lineNo = 0;
+
+            try{
+                while ((line = bufferedReader.readLine()) != null){
+                    if(lineNo++ == 0) continue;
+                    Log.d("CSV_DATA", line);
+                    String[] tokens = line.split(",");
+
+                }
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+//            byte[] csvInBytes = new byte[inputStream.available()];
+
+//            inputStream.read(csvInBytes);
+//
+//            encoded_pdf = Base64.encodeToString(csvInBytes, Base64.DEFAULT);
+//
+//            Log.d("dbg", "onActivityResult: "+ encoded_pdf);
+//
+//            Toast.makeText(MainActivity.this, encoded_pdf, Toast.LENGTH_LONG);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

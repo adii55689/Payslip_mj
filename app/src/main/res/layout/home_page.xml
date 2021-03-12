@@ -41,20 +41,20 @@
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:text="Attendance"
-        app:layout_constraintEnd_toStartOf="@+id/report"
+        app:layout_constraintEnd_toStartOf="@+id/uploadCsv"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Employee_add"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/report"
+        android:id="@+id/uploadCsv"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
-        android:text="Report"
+        android:text="Upload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_payslip"
         tools:ignore="MissingConstraints" />

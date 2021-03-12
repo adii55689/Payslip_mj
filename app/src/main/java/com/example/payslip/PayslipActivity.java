@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -52,7 +53,7 @@ public class PayslipActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String nameClicked = listView.getItemAtPosition(i).toString();
-                searchView.setQuery(nameClicked, false);
+                searchView.setQuery(nameClicked, true);
                 searchView.clearFocus();
             }
         });
@@ -66,15 +67,15 @@ public class PayslipActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 try {
-                    String[] resp = get(newText);
+                    List<String> resp = get(newText);
                     listElementsArrayList.clear();
-                    if(resp.length==0){
+                    if(resp.size()==0){
                         listView.setVisibility(View.INVISIBLE);
                         return false;
                     }
-                    for(int i =0; i<resp.length;i++){
-                        System.out.println(resp[i]);
-                        listElementsArrayList.add(resp[i]);
+                    for(int i =0; i<resp.size();i++){
+                        System.out.println(resp.get(i));
+                        listElementsArrayList.add(resp.get(i));
                     }
                     listView.setVisibility(View.VISIBLE);
                     adapter.notifyDataSetChanged();
@@ -91,7 +92,7 @@ public class PayslipActivity extends AppCompatActivity {
         });
     }
 
-    String[] get(String name) throws IOException {
+    List<String> get(String name) throws IOException {
 //        RequestBody body = RequestBody.create(json, JSON);
         String url = "https://payslipmj.tk/api/employees/search";
         if(!name.isEmpty()){
@@ -101,7 +102,7 @@ public class PayslipActivity extends AppCompatActivity {
                 .url(url)
                 .build();
         try (Response response = client.newCall(request).execute()) {
-            return response.body().string().split(",");
+            return Arrays.asList(response.body().string().split(","));
         }
     }
 
