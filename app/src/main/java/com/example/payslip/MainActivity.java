@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Button employeePageButton = findViewById(R.id.Employee_add);
+        TextView employeePageButton = findViewById(R.id.Employee_add);
         employeePageButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        Button paymentButton = findViewById(R.id.payment_payslip);
+        TextView paymentButton = findViewById(R.id.payment_payslip);
         paymentButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        Button uploadCsvButton = findViewById(R.id.uploadCsv);
+        TextView uploadCsvButton = findViewById(R.id.uploadCsv);
         uploadCsvButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {

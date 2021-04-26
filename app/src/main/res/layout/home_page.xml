@@ -1,61 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-    android:background="@drawable/bg2">
+    android:background="#2b6bb3"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/payment_payslip"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="332dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:text="Payment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/Employee_add"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="332dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="Employee"
-        app:layout_constraintEnd_toStartOf="@+id/payment_payslip"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/attendance_payslip"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="Attendance"
-        app:layout_constraintEnd_toStartOf="@+id/uploadCsv"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Employee_add"
-        tools:ignore="MissingConstraints" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-    <Button
-        android:id="@+id/uploadCsv"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:text="Upload"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/payment_payslip"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textdashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:text="Payslip Dashboard"
+                />
+
+            <TextView
+                android:layout_below="@+id/textdashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp"
+                android:textColor="#52BAFF"
+                android:text="6 Items" />
+
+
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/user"
+                android:layout_width="62dp"
+                android:layout_height="62dp"/>
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/calendar"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/calender"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="Calender"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <!--Duplicate -->
+
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/employee"/>
+
+                    <TextView
+                        android:id="@+id/Employee_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Employee"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:rotationX="48"
+                        android:src="@drawable/payment" />
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="italic"
+                        android:text="Payment"
+                        android:id="@+id/payment_payslip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/attendance"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:id="@+id/attendance_payslip"
+                        android:text="Attendance"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/upload"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="Upload"
+                        android:id="@+id/uploadCsv"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/report"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="Report"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
