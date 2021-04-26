@@ -1,7 +1,10 @@
 package com.example.payslip;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
@@ -32,6 +35,11 @@ public class EmployeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee);
+
+        ActionBar actionBar;
+        actionBar =getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2b6bb3")));
+
 
         etname = findViewById(R.id.et_name);
         etmobile= findViewById(R.id.et_mobile);

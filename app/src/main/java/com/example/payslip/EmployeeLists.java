@@ -1,5 +1,6 @@
 package com.example.payslip;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
@@ -12,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -36,7 +38,9 @@ public class EmployeeLists extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_lists);
-
+        ActionBar actionBar;
+        actionBar =getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2b6bb3")));
         ArrayList<Employee> employees = (ArrayList<Employee>)getIntent().getSerializableExtra("employeesList");
 
         ListView listView = findViewById(R.id.employeesList);

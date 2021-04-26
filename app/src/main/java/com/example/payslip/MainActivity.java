@@ -1,12 +1,16 @@
 package com.example.payslip;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 1;
 
-
+    ActionBar actionBar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,9 +62,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    actionBar =getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2b6bb3")));
 
-
-        TextView employeePageButton = findViewById(R.id.Employee_add);
+        CardView employeePageButton = findViewById(R.id.Employee_add);
         employeePageButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        TextView paymentButton = findViewById(R.id.payment_payslip);
+        CardView paymentButton = findViewById(R.id.payment_payslip);
         paymentButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-        TextView uploadCsvButton = findViewById(R.id.uploadCsv);
+        CardView uploadCsvButton = findViewById(R.id.uploadCsv);
         uploadCsvButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(chooseFile,REQUEST_PDF);
             }
         }));
+        CardView Report = (CardView)findViewById(R.id.report);
+        Report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://payslipmj.tk/api/Employees/csv"));
+                startActivity(browserIntent);
+                Toast.makeText(getApplicationContext(),"Downloading Report",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         /*final Button pay = findViewById(R.id.pay_final);

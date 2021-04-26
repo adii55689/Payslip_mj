@@ -1,176 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1b1b1b"
-    android:orientation="vertical"
-    android:padding="20dp">
 
+    android:background="#2b6bb3">
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:focusedByDefault="true"
-        android:iconifiedByDefault="false"
-        android:pointerIcon="crosshair"
-        android:queryHint="Search Here"
-        android:theme="@style/Widget.AppCompat.SearchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="341dp" />
-
-
-    <ListView
-        android:id="@+id/employeeListView"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="28dp"
-        android:background="#F8F6F6"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        tools:layout_conversion_absoluteHeight="623dp"
-        tools:layout_conversion_absoluteWidth="371dp"
-        tools:visibility="invisible" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/tataproject" />
 
     <EditText
-        android:id="@+id/et_grosspay"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@color/white"
+        android:id="@+id/et_name"
+        android:layout_width="195dp"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@drawable/form_bg"
+        android:layout_marginTop="20dp"
+        android:hint="Enter Your Name"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+
+    <EditText
+        android:id="@+id/et_gross"
+        android:inputType="phone"
+        android:layout_width="195dp"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@drawable/form_bg"
+        android:layout_marginTop="20dp"
         android:hint="Gross Pay"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employeeListView"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
 
     <EditText
-        android:id="@+id/et_Earnings"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
+        android:id="@+id/et_earnings"
+        android:inputType="numberDecimal"
+        android:layout_width="195dp"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@drawable/form_bg"
+        android:layout_marginTop="20dp"
         android:hint="Other Earnings"
-        android:inputType="number"
-        android:maxLength="10"
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_grosspay"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
-        android:id="@+id/et_mail"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
+        android:id="@+id/et_Deductions"
+        android:inputType="text"
+        android:layout_width="195dp"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@drawable/form_bg"
+        android:layout_marginTop="20dp"
         android:hint="Other Deductions"
-        android:inputType="number"
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_Earnings"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
-        android:id="@+id/et_paid_amount"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
-
+        android:id="@+id/et_paid"
+        android:inputType="numberDecimal"
+        android:layout_width="195dp"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@drawable/form_bg"
+        android:layout_marginTop="20dp"
         android:hint="Paid Amount"
-        android:inputType="number"
-        android:maxLength="10"
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_mail"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
-
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
-        android:id="@+id/et_Net_pay"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
-        android:hint="Net Pay"
-        android:maxLength="10"
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_paid_amount"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
-
+        android:id="@+id/et_Balance"
+        android:layout_width="195dp"
+        android:inputType="numberDecimal"
+        android:layout_height="39dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@drawable/form_bg"
+        android:layout_marginTop="20dp"
+        android:hint="Opening Balance"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
-        android:id="@+id/et_Obalance"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
-        android:hint="Opening Balance  of Last Month"
-        android:inputType="number"
-        android:maxLength="10"
-
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_Net_pay"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
-
-    <EditText
-        android:id="@+id/et_date"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/white"
-        android:hint="Date Of Pay"
+        android:id="@+id/et_join_date"
+        android:layout_width="195dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/form_bg"
+        android:hint="Date of Pay"
         android:inputType="date"
-
-        android:padding="10dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_Obalance"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="371dp" />
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <Button
-        android:id="@+id/pay_final"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Pay Now"
-        app:layout_constraintTop_toBottomOf="@+id/et_date"
-        tools:layout_conversion_absoluteHeight="0dp"
-        tools:layout_conversion_absoluteWidth="101dp"
-        tools:layout_editor_absoluteX="129dp" />
+        android:layout_width="195dp"
+        android:layout_height="39dp"
+        android:id="@+id/add_employee"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:text="Pay Now "/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
